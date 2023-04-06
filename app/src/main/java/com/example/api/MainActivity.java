@@ -25,6 +25,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -107,11 +108,11 @@ public class MainActivity extends AppCompatActivity {
                         String description = volumeObj.optString("description");
                         int pageCount = volumeObj.optInt("pageCount");
                         JSONObject imageLinks = volumeObj.optJSONObject("imageLinks");
-                        String thumbnail = imageLinks.optString("thumbnail");
+                        String thumbnail = Objects.requireNonNull(imageLinks).optString("thumbnail");
                         String previewLink = volumeObj.optString("previewLink");
                         String infoLink = volumeObj.optString("infoLink");
                         JSONObject saleInfoObj = itemsObj.optJSONObject("saleInfo");
-                        String buyLink = saleInfoObj.optString("buyLink");
+                        String buyLink = Objects.requireNonNull(saleInfoObj).optString("buyLink");
                         ArrayList<String> authorsArrayList = new ArrayList<>();
                         // if statement
                         if (authorsArray.length() != 0) {
