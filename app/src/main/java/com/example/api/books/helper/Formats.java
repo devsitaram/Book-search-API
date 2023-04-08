@@ -1,4 +1,4 @@
-package com.example.api.books;
+package com.example.api.books.helper;
 
 public class Formats{
 	private String applicationOctetStream;

@@ -3,6 +3,7 @@ package com.example.api.books;
 import androidx.annotation.NonNull;
 
 import com.example.api.books.helper.BooksPojo;
+
 import java.util.List;
 
 import retrofit2.Call;
@@ -18,17 +19,17 @@ public class BooksPresenter implements BooksContract.Presenter {
         booksModel.getBooks(id).enqueue(new Callback<List<BooksPojo>>() {
             @Override
             public void onResponse(@NonNull Call<List<BooksPojo>> call, @NonNull Response<List<BooksPojo>> response) {
-                if (response.isSuccessful()){
+                if (response.isSuccessful()) {
                     view.successMessage(true);
                     view.setBooks(response.body());
-                }else {
-                    view.errorMessage("Book is not available");
+                } else {
+//                    view.errorMessage("Book is not available");
                 }
             }
 
             @Override
             public void onFailure(@NonNull Call<List<BooksPojo>> call, @NonNull Throwable throwable) {
-                view.errorMessage(throwable.getMessage());
+//                view.errorMessage(throwable.getMessage());
             }
         });
     }
