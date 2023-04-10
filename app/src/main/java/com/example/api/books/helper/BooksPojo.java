@@ -15,6 +15,7 @@ public class BooksPojo {
 	private List<AuthorsItem> authors;
 	private int downloadCount;
 
+	// getter and setter methods
 	public boolean isCopyright(){
 		return copyright;
 	}
@@ -58,6 +59,12 @@ public class BooksPojo {
 	public int getDownloadCount(){
 		return downloadCount;
 	}
+
+//	public BooksPojo(int id, String title, List<AuthorsItem> authors){
+//		this.id = id;
+//		this.title = title;
+//		this.authors = authors;
+//	}
 
 	// constructor
 	public BooksPojo(boolean copyright, List<String> translators, Formats formats, List<String> languages, String mediaType, List<String> subjects, List<String> bookshelves, int id, String title, List<AuthorsItem> authors, int downloadCount) {

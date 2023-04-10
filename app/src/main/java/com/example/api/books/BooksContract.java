@@ -7,10 +7,10 @@ import java.util.List;
 import retrofit2.Call;
 
 public interface BooksContract {
-    interface View{
+    interface View {
         void successMessage(boolean show);
         void errorMessage(String message);
-        void setBooks(List<BooksPojo> body);
+        void setBook(List<BooksPojo> body);
     }
 
     interface Presenter{
